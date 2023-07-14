@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}|Noticias{% endblock %}
+{% block content %}
+<article>
+    {% for noticia in object_list %}
+    <div class="contenedor-noticia">
+    <h4 class="titulo-noticia">{{ noticia.titulo }}</h4>
+    <div>
+        <img src="{{ noticia.imagen_1.url }}" class="img-fluid rounded">
+    </div>
+    <p class="texto-noticia">{{ noticia.contenido|safe }}</p>
+    </div>
+    {% endfor %}
+</article>
+{% endblock %}

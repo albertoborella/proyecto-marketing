@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}|Servicios{% endblock %}
+{% block content %}
+<div class="servicios"">
+<h3 class="subtitulo">Nuestros Servicios</h3>
+{% for servicio in object_list %}
+<div class="row marco">  	
+    <div class="col-lg-5 col-md-4">
+      {% if servicio.imagen %}
+        <img class="img-fluid" src="{{ servicio.imagen.url }}" alt="">
+      {% endif %}
+    </div>
+    <div class="col-lg-6 col-md-8">
+        <h2 class="titulo-servicio">{{ servicio.titulo }}</h2>   
+        <p class="texto-servicio">{{ servicio.texto }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<div class=" curso">
+  <h3 class="titulo-cursos">Nuestros Cursos</h3>
+  <div class="row"> 	
+    <div class="col-md-12 al-lado">
+      <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="../media/servicios/campanas.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Campañas Publicitarias</h5>
+          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="../media/servicios/instagram.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Uso de Instagram en Marketing</h5>
+          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="../media/servicios/curso-estrategias-marketing.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Estrategias de Marketing</h5>
+          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
